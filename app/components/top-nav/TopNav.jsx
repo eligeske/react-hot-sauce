@@ -12,9 +12,10 @@ export default function TopNav() {
         <NavBarBrand>Hot Sauce</NavBarBrand>
         <NavBarMobileCollapse>
           <NavBar>
-            <NavBarItemDropDown text={'Area Group'}>
-              <NavBarLink link="/">Area 1</NavBarLink>
-              <NavBarLink link="/area2">Area 2</NavBarLink>
+            <NavBarLink link="/area1">Area 1</NavBarLink>
+            <NavBarItemDropDown text={'Area 2'}>
+              <NavBarLink link="/area2/one">One</NavBarLink>
+              <NavBarLink link="/area2/two">Two</NavBarLink>
             </NavBarItemDropDown>
           </NavBar>
           <NavBarRight>

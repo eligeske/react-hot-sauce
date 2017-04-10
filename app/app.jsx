@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import TopNav from './components/top-nav/TopNav';
 import Container from './components/common/Container';
 
-const Area1 = () => (<div><h1>Area1</h1></div>);
-const Area2 = () => (<div><h1>Area2</h1></div>);
+
+import AppRoutes from './AppRoutes';
 
 export default class App extends PureComponent {
   static propTypes = {
@@ -21,10 +21,7 @@ export default class App extends PureComponent {
             <TopNav />
           </header>
           <Container>
-            <section>
-              <Route exact path="/" component={Area1} />
-              <Route exact path="/area2" component={Area2} />
-            </section>
+            <AppRoutes />
           </Container>
         </div>
       </Router>
