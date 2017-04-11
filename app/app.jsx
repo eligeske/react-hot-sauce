@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import TopNav from './components/top-nav/TopNav';
-import Container from './components/common/Container';
+import Page from './containers/Page';
 
-
-import AppRoutes from './AppRoutes';
+import pageRoutes from './pageRoutes';
 
 export default class App extends PureComponent {
   static propTypes = {
@@ -20,9 +19,9 @@ export default class App extends PureComponent {
           <header>
             <TopNav />
           </header>
-          <Container>
-            <AppRoutes />
-          </Container>
+          <Page>
+            {pageRoutes.map(route => <Route {...route} />)}
+          </Page>
         </div>
       </Router>
     );

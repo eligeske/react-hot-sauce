@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '../common/Container';
+import Container from '../common/layout/Container';
 import {
   NavBar, NavBarRight, NavBarItem, NavBarLink, NavBarItemDropDown,
   NavBarTop, NavBarBrand, NavBarMobileCollapse
