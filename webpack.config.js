@@ -8,7 +8,7 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'cheap-source-map',
   devServer: {
     historyApiFallback: true
   },

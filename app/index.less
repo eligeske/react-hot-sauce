@@ -1,17 +1,44 @@
-@import '../vendors/bootswatch/paper/css/bootstrap.min.css';
+@import '../node_modules/bootstrap/less/bootstrap.less';
+@import './theme-variables.less';
+@import './theme.less';
+
+@border-radius-base:        0;
+@border-radius-large:       0;
+@border-radius-small:       0;
+
+
+
+@topNavHeight: 45px;
 
 body {
-  padding-top: 64px;
+  padding-top: @topNavHeight;
+  background-color: @footer-bg;
+}
+#app {
+  background-color: @app-bg;
 }
 
 a {
   cursor: pointer;
 }
 
-h2 {
-  color: purple;
-}
-
 .navbar-fixed-top {
   border: 0;
+}
+
+.container-fluid {
+  max-width: 1200px;
+}
+
+pre {
+  background-color: none;
+  border: 0;
+}
+
+.panel-heading {
+  h2 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
 }

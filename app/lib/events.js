@@ -8,3 +8,7 @@ export function add(element, eventName, func) {
 export function remove(element, eventName) {
   $(element).off(eventName);
 }
+
+export function trigger(element, eventName) {
+  $(element).trigger(eventName);
+}

@@ -1,0 +1,30 @@
+@import '../../../theme-variables.less';
+@band-light: @brand-info;
+@band-dark: darken(@brand-info, 2%);
+.home-page {
+  h2 {
+    font-size: 24px;
+  }
+
+  .jumbotron {
+    color: @navbar-default-link-color;
+    text-shadow: darken(@brand-primary, 45%) 1px 1px 6px;
+    text-align: center;
+    h1 {
+      background-color: @brand-info;
+      box-shadow: inset lighten(@brand-info, 35%) 0px 0px 10px 0px; //#990425
+      padding: 10px 20px;
+      border: 1px dashed @body-bg;
+      font-family: 'Dancing Script', cursive;
+      display: inline-block;
+    }
+    background-color: @brand-info;
+    // background: -moz-linear-gradient(-45deg, #a90329 0%, #b50321 19%, #a90329 54%, #b50321 75%, #a90329 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-75deg, @band-light 0%, @band-dark 19%, @band-light 54%, @band-dark 75%, @band-light 100%); /* Chrome10-25,Safari5.1-6 */
+    // background: linear-gradient(135deg, #a90329 0%,#b50321 19%,#a90329 54%,#b50321 75%,#a90329 100%);
+    //180deg, #a60223 0%, #9c0523 49%, #9c0322 54%, #a10020 75%, #ff6d00 100% // flame idea
+  }
+  .intro-blurb {
+    min-height: 100px;
+  }
+}
