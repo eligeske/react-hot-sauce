@@ -6,8 +6,6 @@ import NavStackedPillsInfo from './NavStackedPillsInfo';
 import NavItemsInfo from './NavItemsInfo';
 
 export default function NavInfo() {
-  window.perf.navInfo = performance.now();
-  console.log(`perf navInfo took: ${window.perf.navInfo - window.perf.start}ms`);
   return (
     <div className="code-page">
       <h1>Nav Component</h1>

@@ -55,8 +55,8 @@ export default function Home() {
               <PanelBody>
                 <p>Dust off the ole bootstrap ui framework. Even with version 4 right
                 around the corner and other options such as material-ui, bootstrap is
-                still one of my favorite go tos.</p>
-                <p>Check out the source and learn how to wrap it into reusable pure functions.</p>
+                still well maintained and highly effective.</p>
+              <p>Check out the source and learn how to wrap it into reusable pure functions and components.</p>
               </PanelBody>
             </Panel>
           </Col>

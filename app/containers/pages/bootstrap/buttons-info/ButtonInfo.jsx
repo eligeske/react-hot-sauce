@@ -34,8 +34,6 @@ btnSizes.forEach((size) => {
 });
 
 export default function ButtonInfo() {
-  window.perf.buttonsInfo = performance.now();
-  console.log(`perf buttonsInfo took: ${window.perf.buttonsInfo - window.perf.start}ms`);
   return (
     <section>
       <h2>Button</h2>
