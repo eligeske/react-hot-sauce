@@ -25,12 +25,23 @@ export default function TopNav() {
               <NavItemLink route="/area2/one">One</NavItemLink>
               <NavItemLink route="/area2/two">Two</NavItemLink>
             </NavItemDropdown>
-            <NavItemDropdown text={'Redux'} action={'hover'} activeOnPath={'/redux/'}>
+            <NavItemDropdown
+              text={'Redux'}
+              action={'hover'}
+              route={'/redux/redux-info'}
+              activeOnPath={'/redux/'}
+            >
               <NavItemLink route="/redux/redux-info">Intro</NavItemLink>
               <NavItemLink route="/redux/basic-store">Basic Store</NavItemLink>
-              <NavItemLink route="/redux/basic-react-redux">Basic React Redux</NavItemLink>
+              <NavItemLink route="/redux/react-redux-basic">Basic React Redux</NavItemLink>
+              <NavItemLink route="/redux/react-redux-pure">Pure React Redux</NavItemLink>
             </NavItemDropdown>
-            <NavItemDropdown text={'Bootstrap'} action={'hover'} activeOnPath={'/bootstrap/'}>
+            <NavItemDropdown
+              text={'Bootstrap'}
+              action={'hover'}
+              route={'/bootstrap/bootstrap-info'}
+              activeOnPath={'/bootstrap/'}
+            >
               <NavItemLink route="/bootstrap/bootstrap-info">Intro</NavItemLink>
               <NavItemLink route="/bootstrap/nav-info">Nav Component</NavItemLink>
               <NavItemLink route="/bootstrap/navbars-info">Navbar Component</NavItemLink>

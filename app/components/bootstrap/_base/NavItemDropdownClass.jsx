@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { matchPath } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { matchPath } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import {
   add as eventAdd,
@@ -16,18 +17,19 @@ eventAdd(window, 'click', () => {
   eventTrigger(window, globalCloseEventName);
 });
 
-
-function NoCaretLink(props) {
+function RouteLink(props) {
+  return (
+    <NavLink to={props.route} className="dropdown-toggle">
+      {props.text}
+      {props.caret && <span className="caret" />}
+    </NavLink>
+  );
+}
+function TopLink(props) {
   return (
     <a href="/" className="dropdown-toggle">
       {props.text}
-    </a>
-  );
-}
-function CaretLink(props) {
-  return (
-    <a href="/" className="dropdown-toggle">
-      {props.text} <span className="caret" />
+      {props.caret && <span className="caret" />}
     </a>
   );
 }
@@ -57,9 +59,11 @@ export default class NavItemDropdownClass extends Component {
   localCloseEventName = `${globalCloseEventName}.${Date.now()}`;
 
   handleClick = (ev) => {
-    ev.preventDefault();
-    this.toggleDropdown(!this.state.expanded);
-    this.triggerGlobalClose();
+    if (this.props.action !== 'hover' && !this.props.route) {
+      ev.preventDefault();
+      this.toggleDropdown(!this.state.expanded);
+      this.triggerGlobalClose();
+    }
   }
 
   handleMouseOver = (ev) => {
@@ -136,9 +140,9 @@ export default class NavItemDropdownClass extends Component {
     const active = this.pathIsActive();
     const cssObj = { open: expanded, active };
     const css = classNames('dropdown', cssObj);
-    const topLink = this.props.caret
-      ? <CaretLink {...props} />
-      : <NoCaretLink {...props} />;
+    const topLink = this.props.route
+      ? <RouteLink {...props} />
+      : <TopLink {...props} />;
 
     return (
       <li className={css} {...events}>

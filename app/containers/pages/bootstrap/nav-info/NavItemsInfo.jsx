@@ -106,6 +106,11 @@ export default function NavItemsInfo() {
               </TableCol>
             </TableRow>
             <TableRow>
+              <TableCol>route</TableCol>
+              <TableCol>optional (hover only)</TableCol>
+              <TableCol><p>When clicked navigates to passed route</p></TableCol>
+            </TableRow>
+            <TableRow>
               <TableCol>activeOnPath</TableCol>
               <TableCol>optional</TableCol>
               <TableCol><p>If a partial match is found in the page location, it will set it to {'.active'}</p></TableCol>
