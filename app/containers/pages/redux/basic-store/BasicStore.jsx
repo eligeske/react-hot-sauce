@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import CodeJS from '../../../../components/code-highlight/CodeJS';
 
 // Non-relavent Layout Components
@@ -10,7 +10,7 @@ import {
 import myBasicStore from '../../../../store/basic/';
 import MyBasicTable from './MyBasicTable';
 
-export default class BasicStore extends PureComponent {
+export default class BasicStore extends Component {
 
   constructor(props) {
     super(props);
@@ -39,10 +39,12 @@ export default class BasicStore extends PureComponent {
             <MyBasicTable store={myBasicStore} myTable={this.state.myTable} />
           </PanelBody>
           <PanelFooter>
-            <CodeJS>{`import myBasicStore from './store/basic/myBasicStore';
+            <CodeJS>{`import React, { Component } from 'react';
+
+import myBasicStore from './store/basic/myBasicStore';
 import MyBasicTable from './MyBasicTable';
 
-export default class BasicStoreExample extends PureComponent {
+export default class BasicStoreExample extends Component {
   constructor(props) {
     super(props);
     this.state = myBasicStore.getState();
