@@ -87,37 +87,28 @@ const defaultState = {
 };
 
 /**
-* Helper to assign new rows to state.myTable without mutating
-*/
-function myTableRowReducer(state, newRows) {
-  const newMyTable = Object.assign({}, state.myTable, { rows: newRows });
-  const nextState = Object.assign({}, state, { myTable: newMyTable });
-  return nextState;
-}
-
-/**
 * Basic actions and reducers
 * @param {object} state
 * @param {object} action
 * @return {object} newState
 */
 function myBasicActionsAndReducers(state = defaultState, { type, payload }) {
-  let newState;
+  const nextState = Object.assign({}, state);
+
   switch (type) {
     case 'ROW_ADD': {
       const newRow = payload;
       const newRows = [newRow, ...state.myTable.rows];
-      newState = myTableRowReducer(state, newRows);
+      nextState.myTable.rows = newRows;
     }
       break;
     case 'ROW_REMOVE': {
       const idx = payload;
       const newRows = state.myTable.rows.filter((r, i) => (i !== idx));
-      newState = myTableRowReducer(state, newRows);
+      nextState.myTable.rows = [...newRows];
     }
       break;
-    default: newState = state;
-      break;
+    default: break;
   }
   return newState;
 }

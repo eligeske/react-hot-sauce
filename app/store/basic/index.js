@@ -37,7 +37,7 @@ function myBasicActionsAndReducers(state = defaultState, { type, payload, target
     case 'ROW_REMOVE': {
       const idx = payload;
       const newRows = state[tableName].rows.filter((r, i) => (i !== idx));
-      nextState[tableName].rows = newRows;
+      nextState[tableName].rows = [...newRows];
     }
       break;
     default: break;
