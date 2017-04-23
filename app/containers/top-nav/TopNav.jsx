@@ -16,14 +16,21 @@ export default function TopNav() {
         <NavbarBrandLink route="/">Hot Sauce</NavbarBrandLink>
         <NavbarMobileCollapse>
           <NavbarNav>
-            <NavItemLink route="/area1">Area 1</NavItemLink>
-            <NavItemDropdown text={'Area 2 click'}>
-              <NavItemLink route="/area2/one">Nav Compo</NavItemLink>
-              <NavItemLink route="/area2/two">Two</NavItemLink>
+            <NavItemDropdown
+              text={'React'}
+              action={'hover'}
+              route={'/react/react-info'}
+              activeOnPath={'/react/'}
+            >
+              <NavItemLink route="/react/react-info">Intro</NavItemLink>
             </NavItemDropdown>
-            <NavItemDropdown text={'Dropdown Hover'} action={'hover'}>
-              <NavItemLink route="/area2/one">One</NavItemLink>
-              <NavItemLink route="/area2/two">Two</NavItemLink>
+            <NavItemDropdown
+              text={'React Router'}
+              action={'hover'}
+              route={'/react-router/react-router-dom-info'}
+              activeOnPath={'/react-router/'}
+            >
+              <NavItemLink route="/react-router/react-router-dom-info">Intro</NavItemLink>
             </NavItemDropdown>
             <NavItemDropdown
               text={'Redux'}

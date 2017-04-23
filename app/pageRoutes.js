@@ -1,11 +1,13 @@
 import Home from './containers/pages/home/HomePage';
-import Area1 from './containers/pages/area1/Area1';
+import ReactPage from './containers/pages/react/ReactPage';
+import ReactRouterDOMPage from './containers/pages/react-router-dom/ReactRouterDOMPage';
 import ReduxPage from './containers/pages/redux/ReduxPage';
 import BootstrapPage from './containers/pages/bootstrap/BootstrapPage';
 
 export default [
   { path: '/', component: Home, key: 'home', exact: true },
-  { path: '/area1', component: Area1, key: 'area1' },
+  { path: '/react', component: ReactPage, key: 'react' },
+  { path: '/react-router', component: ReactRouterDOMPage, key: 'react-router' },
   { path: '/redux', component: ReduxPage, key: 'redux' },
   { path: '/bootstrap', component: BootstrapPage, key: 'bootstrap' }
 ];
