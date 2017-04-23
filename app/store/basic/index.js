@@ -10,17 +10,12 @@ const defaultState = {
   myTable: {
     title: 'My Table!',
     rows: []
+  },
+  myOtherTable: {
+    title: 'my other table',
+    rows: [['one'], ['tow']]
   }
 };
-
-/**
-* Helper to assign new rows to state.myTable without mutating
-*/
-function myTableRowReducer(state, newRows) {
-  const newMyTable = Object.assign({}, state.myTable, { rows: newRows });
-  const nextState = Object.assign({}, state, { myTable: newMyTable });
-  return nextState;
-}
 
 /**
 * Basic actions and reducers
@@ -28,25 +23,26 @@ function myTableRowReducer(state, newRows) {
 * @param {object} action
 * @return {object} newState
 */
-function myBasicActionsAndReducers(state = defaultState, { type, payload }) {
-  let newState;
+function myBasicActionsAndReducers(state = defaultState, { type, payload, target }) {
+  const tableName = target || 'myTable';
+  const nextState = Object.assign({}, state);
+
   switch (type) {
     case 'ROW_ADD': {
       const newRow = payload;
-      const newRows = [newRow, ...state.myTable.rows];
-      newState = myTableRowReducer(state, newRows);
+      const newRows = [newRow, ...state[tableName].rows];
+      nextState[tableName].rows = newRows;
     }
       break;
     case 'ROW_REMOVE': {
       const idx = payload;
-      const newRows = state.myTable.rows.filter((r, i) => (i !== idx));
-      newState = myTableRowReducer(state, newRows);
+      const newRows = state[tableName].rows.filter((r, i) => (i !== idx));
+      nextState[tableName].rows = newRows;
     }
       break;
-    default: newState = state;
-      break;
+    default: break;
   }
-  return newState;
+  return nextState;
 }
 
 

@@ -44,7 +44,7 @@ export default function DataTable1(props) {
 DataTable1.prototype.propTypes = {
   title: PropTypes.string.isRequired,
   headers: PropTypes.arrayOf(PropTypes.string).isRequired,
-  rows: PropTypes.shape(PropTypes.string).isRequired,
+  rows: PropTypes.arrayOf(PropTypes.string).isRequired,
   onAdd: PropTypes.func.isRequired,
   onRemove: PropTypes.func.isRequired
 };

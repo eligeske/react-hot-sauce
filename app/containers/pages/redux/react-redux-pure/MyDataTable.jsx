@@ -4,29 +4,22 @@ import PropTypes from 'prop-types';
 import DataTable1 from '../../../../components/data-tables/DataTable1';
 import SimpleTextForm from '../../../../components/data-forms/SimpleTextForm';
 
-export default class MyBasicTable extends Component {
+export default class MyDataTable extends Component {
   static propTypes = {
-    store: PropTypes.shape({
-      getState: PropTypes.func.isRequired,
-      dispatch: PropTypes.func.isRequired
-    }).isRequired
+    title: PropTypes.string.isRequired,
+    rows: PropTypes.arrayOf(
+      PropTypes.arrayOf(PropTypes.string)
+    ).isRequired,
+    addRow: PropTypes.func.isRequired,
+    removeRow: PropTypes.func.isRequired
   }
 
-  handleAdd = (row) => {
-    this.props.store.dispatch({
-      type: 'ROW_ADD',
-      payload: [row] // our row is an array of strings
-    });
-  }
-  handleRemove = (idx) => {
-    this.props.store.dispatch({
-      type: 'ROW_REMOVE',
-      payload: idx // our row is an array of strings
-    });
-  }
+  handleAdd = str => this.props.addRow([str]);
+
+  handleRemove = idx => this.props.removeRow(idx);
 
   render() {
-    const { title, rows } = this.props.myTable;
+    const { title, rows } = this.props;
     return (
       <div>
         <SimpleTextForm
@@ -36,7 +29,7 @@ export default class MyBasicTable extends Component {
         />
         <DataTable1
           title={title}
-          headers={['Hello']}
+          headers={['Header']}
           rows={rows}
           onRemove={this.handleRemove}
         />

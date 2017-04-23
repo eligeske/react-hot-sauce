@@ -36,7 +36,7 @@ export default class MyBasicTable extends Component {
         />
         <DataTable1
           title={title}
-          headers={['Hello']}
+          headers={['Header']}
           rows={rows}
           onRemove={this.handleRemove}
         />
