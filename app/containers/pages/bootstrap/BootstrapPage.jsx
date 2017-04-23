@@ -3,12 +3,12 @@ import { Route } from 'react-router-dom';
 
 import SideBarLayout from '../../../components/layouts/SideBarLayout';
 import {
-  NavStackedPills, NavItemText, NavItemLink, NavItemDropdown
+  NavStackedPills, NavItemLink
 } from '../../../components/bootstrap/nav';
 
 import BootstrapInfo from './bootstrap-info/BootstrapInfo';
 import NavInfo from './nav-info/NavInfo';
-import NavbarsInfo from './navbars-info/NavbarInfo';
+import NavbarsInfo from './navbars-info/NavbarsInfo';
 import ButtonsInfo from './buttons-info/ButtonsInfo';
 
 export default function BootstrapPage(...args) {
